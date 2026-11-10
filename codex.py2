@@ -1,0 +1,74 @@
+#METHOD OVERRIDING
+class Personx:
+    def __init__(self,name):
+        self.name=name
+    def info(self):
+        print(f'Name:{self.name}')
+
+        
+class studentx(Personx):
+    def __init__(self,name,subject):
+        super().__init__(name)
+        self.subject=subject
+    def info(self):
+        print(f'Name:{self.name},subject:{self.subject}')
+
+        
+sx=studentx('Jake','CS')
+sx.info()
+class Animal:
+    def sound(self):
+        print('Animal makes a sound')
+
+        
+class Dog(Animal):
+    def sound(self):
+        print('Dog barks')
+
+        
+class Cat (Animal):
+    def sound(self):
+        print('Cat meows')
+
+        
+z=Animal()
+z.sound()
+Animal makes a sound
+y=Dog()
+y.sound()
+Dog barks
+c=Cat()
+c.sound()
+Cat meows
+animals=[Animal(),Dog(),Cat()]
+for i in animals:
+    i.sound()
+#DSA AND ALGORITHMS
+#LINEAR SEARCH
+data = [10, 25, 30, 25, 40, 25]
+tr=25
+for rx in range(len(data)):
+   if data[rx]==tr:
+      print(rx)
+   else:
+      print('not found')
+#BINARY SEARCH
+ data = [5, 10, 15, 20, 25, 30, 35, 40, 45]
+
+tar = 30
+
+low = 0
+high = len(data) - 1
+
+while low <= high:
+    mid = (low + high) // 2
+
+    if data[mid] == tar:
+        print("Found at index:", mid)
+        break
+
+    elif data[mid] < tar:
+        low = mid + 1
+
+    else:
+        high = mid - 1 
